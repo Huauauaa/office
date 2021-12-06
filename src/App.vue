@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue';
+onMounted(async () => {
+  const response = await fetch('/api/users');
+  const data = await response.json();
+  console.log(data);
+});
+</script>
 
 <template>
   <el-date-picker type="date" placeholder="date"></el-date-picker>
