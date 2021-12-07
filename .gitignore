@@ -6,3 +6,4 @@ dist-ssr
 .idea
 
 __pycache__
+migrations
