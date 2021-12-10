@@ -5,3 +5,5 @@ SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
 SECRET_KEY = 'asdasdfasdfasdfasdfasd'
+
+API_PREFIX = '/api'
