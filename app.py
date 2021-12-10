@@ -1,8 +1,10 @@
-from flask import Flask, render_template, jsonify
-import os, config
+from flask import Flask
 from flask_migrate import Migrate
+import os
+
+import config
 from extensions import db
-from models.UserModel import UserModel
+from blueprints import entry_bp, api_bp, user_bp
 
 out_dir = os.path.abspath('.') + os.path.sep + 'dist'
 assets_dir = out_dir + os.path.sep + 'assets'
@@ -14,13 +16,10 @@ db.init_app(app)
 migrate = Migrate(app, db)
 
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+app.register_blueprint(entry_bp)
+app.register_blueprint(api_bp)
+app.register_blueprint(user_bp)
 
 
-@app.route('/api/users')
-def users():
-    users = UserModel.query.all()
-    print(users)
-    return jsonify(users)
+if __name__ == '__main__':
+    app.run(debug=True, port=8888)
