@@ -4,19 +4,10 @@
 
 ## prepare
 
-- `python3 -m venv venv` `. venv/bin/activate`
+- `python3 -m venv venv`
+- `. venv/bin/activate`
 
 ### Database
-
-```sql
-create database <db_name>
-```
-
-```env
-DB_USERNAME=
-DB_PASSWORD=
-DB_DATABASE=
-```
 
 #### init db
 
@@ -35,11 +26,11 @@ DB_DATABASE=
 - `pip install -r requirements.txt`
 - `pnpm install`
 
-## Run
-
-- `flask run`
-- `pnpm run dev`
-
 ## Build
 
 - `pnpm run build`
+
+## Dev run
+
+- `flask run -p 8888`
+- `pnpm run dev`
