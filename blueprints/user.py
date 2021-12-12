@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify
+from decorators import login_required
 from models.UserModel import UserModel
 from schemas.UserSchema import UserSchema
 
@@ -8,6 +9,7 @@ bp = Blueprint('user', __name__, url_prefix=f'{app.config.API_PREFIX}/users')
 
 
 @bp.route('')
+@login_required
 def all():
     result = UserModel.query.all()
     user_schema = UserSchema(many=True)
