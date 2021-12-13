@@ -2,9 +2,7 @@ from flask import Blueprint, jsonify
 from models.UserModel import UserModel
 from schemas.UserSchema import UserSchema
 
-import app
-
-bp = Blueprint('user', __name__, url_prefix=f'{app.config.API_PREFIX}/users')
+bp = Blueprint('user', __name__, url_prefix='/api/users')
 
 
 @bp.route('')
