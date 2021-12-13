@@ -10,6 +10,7 @@ export default ({ mode }) => {
   const { VITE_PROXY } = loadEnv(mode, process.cwd());
 
   return defineConfig({
+    build: { outDir: 'backend/dist' },
     resolve: {
       alias: {
         '~/': `${path.resolve(__dirname, 'src')}/`,

@@ -1,5 +1,6 @@
-from extensions import db
 from datetime import datetime
+
+from extensions import db
 
 
 class UserModel(db.Model):
